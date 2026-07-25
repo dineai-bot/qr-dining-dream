@@ -77,7 +77,7 @@ function DishPage() {
           <section className="mt-6">
             <h3 className="text-xs uppercase tracking-widest text-muted-foreground">Ingredients</h3>
             <div className="mt-2 flex flex-wrap gap-2">
-              {dish.ingredients.map((i) => (
+              {dish.ingredients.map((i: string) => (
                 <span key={i} className="rounded-full bg-secondary px-3 py-1 text-xs">{i}</span>
               ))}
             </div>
@@ -88,7 +88,7 @@ function DishPage() {
           <section className="mt-6">
             <h3 className="text-xs uppercase tracking-widest text-muted-foreground">Allergens</h3>
             <div className="mt-2 flex flex-wrap gap-2">
-              {dish.allergens.map((a) => (
+              {dish.allergens.map((a: string) => (
                 <span key={a} className="rounded-full border border-ember/40 bg-ember/10 px-3 py-1 text-xs text-ember">{a}</span>
               ))}
             </div>
