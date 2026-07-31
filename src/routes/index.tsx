@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { ArrowRight, Clock, MapPin, Sparkles } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 
@@ -23,6 +24,8 @@ function greeting() {
 }
 
 function Welcome() {
+  const [greet, setGreet] = useState("Welcome");
+  useEffect(() => setGreet(greeting()), []);
   return (
     <div className="relative mx-auto min-h-dvh max-w-md overflow-hidden bg-background">
       <div className="absolute inset-0">
@@ -45,7 +48,7 @@ function Welcome() {
 
         <div className="mt-auto space-y-6 fade-up" style={{ animationDelay: "150ms" }}>
           <div>
-            <p className="text-sm uppercase tracking-[0.3em] text-white/60">{greeting()}</p>
+            <p className="text-sm uppercase tracking-[0.3em] text-white/60">{greet}</p>
             <h1 className="mt-3 font-display text-5xl leading-[1.05]">
               Welcome to the <em className="gradient-text-gold not-italic">Marigold</em> table.
             </h1>
