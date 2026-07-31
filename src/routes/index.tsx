@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { ArrowRight, Clock, MapPin, Sparkles } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 
