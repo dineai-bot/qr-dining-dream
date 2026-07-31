@@ -24,6 +24,8 @@ function greeting() {
 }
 
 function Welcome() {
+  const [greet, setGreet] = useState("Welcome");
+  useEffect(() => setGreet(greeting()), []);
   return (
     <div className="relative mx-auto min-h-dvh max-w-md overflow-hidden bg-background">
       <div className="absolute inset-0">
