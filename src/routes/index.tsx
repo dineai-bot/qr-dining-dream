@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ArrowRight, Clock, MapPin, Sparkles } from "lucide-react";
 import hero from "@/assets/hero.jpg";
+import { ThemeSwitcher } from "@/components/dine/ThemeSwitcher";
 
 export const Route = createFileRoute("/")({
   component: Welcome,
