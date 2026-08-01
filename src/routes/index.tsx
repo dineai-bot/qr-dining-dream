@@ -41,9 +41,12 @@ function Welcome() {
             </div>
             <span className="font-display text-xl tracking-tight">DineAI</span>
           </div>
-          <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs backdrop-blur">
-            <MapPin className="mr-1 inline h-3 w-3" /> Table 12
-          </span>
+          <div className="flex items-center gap-2">
+            <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs backdrop-blur">
+              <MapPin className="mr-1 inline h-3 w-3" /> Table 12
+            </span>
+            <ThemeSwitcher />
+          </div>
         </div>
 
         <div className="mt-auto space-y-6 fade-up" style={{ animationDelay: "150ms" }}>
