@@ -42,8 +42,8 @@ function Home() {
 
         <Link
           to="/concierge"
-          className="mt-4 flex items-center gap-4 overflow-hidden rounded-2xl p-4 shadow-elevated"
-          style={{ background: "var(--gradient-hero)", color: "var(--hero-foreground)" }}
+          className="mt-4 flex items-center gap-4 overflow-hidden rounded-2xl p-4 text-primary-foreground shadow-elevated"
+          style={{ background: "var(--gradient-hero)" }}
         >
           <div className="relative flex h-12 w-12 items-center justify-center rounded-full bg-white/10">
             <span className="absolute inset-0 rounded-full pulse-ring bg-gold/50" />
