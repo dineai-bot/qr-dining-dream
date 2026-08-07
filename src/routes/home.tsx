@@ -1,8 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Search, Sparkles, ChevronRight, Bell, MapPin } from "lucide-react";
+import { Search, ChevronRight, Bell, MapPin } from "lucide-react";
 import { AppShell } from "@/components/dine/AppShell";
+import { ConciergeOrb } from "@/components/dine/ConciergeOrb";
 import { MenuCard } from "@/components/dine/MenuCard";
 import { categories, dishes } from "@/lib/menu";
+
 
 export const Route = createFileRoute("/home")({
   component: Home,
@@ -42,19 +44,34 @@ function Home() {
 
         <Link
           to="/concierge"
-          className="mt-4 flex items-center gap-4 overflow-hidden rounded-2xl p-4 text-primary-foreground shadow-elevated"
+          className="group relative mt-4 block overflow-hidden rounded-3xl p-5 text-primary-foreground shadow-elevated transition-transform hover:-translate-y-0.5"
           style={{ background: "var(--gradient-hero)" }}
         >
-          <div className="relative flex h-12 w-12 items-center justify-center rounded-full bg-white/10">
-            <span className="absolute inset-0 rounded-full pulse-ring bg-gold/50" />
-            <Sparkles className="relative h-5 w-5 text-gold" />
+          <span
+            className="pointer-events-none absolute -right-10 -top-14 h-44 w-44 rounded-full opacity-40 blur-2xl"
+            style={{ background: "var(--gradient-gold)" }}
+          />
+          <div className="relative flex items-center gap-4">
+            <ConciergeOrb size={52} active />
+            <div className="flex-1">
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] uppercase tracking-widest text-white/60">AI Concierge</span>
+                <span className="rounded-full border border-gold/40 bg-gold/15 px-1.5 py-0.5 text-[9px] uppercase tracking-widest text-gold">Live</span>
+              </div>
+              <div className="mt-1 font-display text-lg leading-tight">Meet Aria, your digital host</div>
+              <p className="mt-1 text-xs text-white/60">Pairings, allergies, or "surprise me" — just ask.</p>
+            </div>
+            <ChevronRight className="h-5 w-5 text-white/60 transition-transform group-hover:translate-x-0.5" />
           </div>
-          <div className="flex-1">
-            <div className="text-xs uppercase tracking-widest text-white/60">AI Concierge</div>
-            <div className="font-display text-base leading-tight">"What do you feel like tonight?"</div>
+          <div className="relative mt-4 flex gap-2 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {["What's light tonight?", "Pair my wagyu", "Nut-free desserts"].map((q) => (
+              <span key={q} className="shrink-0 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-[11px] text-white/85">
+                {q}
+              </span>
+            ))}
           </div>
-          <ChevronRight className="h-5 w-5 text-white/60" />
         </Link>
+
       </header>
 
       <section className="mt-8">
